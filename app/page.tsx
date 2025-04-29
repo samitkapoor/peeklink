@@ -14,6 +14,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (url: string) => {
+    setData(undefined);
     setIsLoading(true);
     const response = await fetch('/api/link-previews', {
       method: 'POST',

@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import { Metadata } from '@/types/metadata';
 import TwitterCard from '@/components/ui/twitter-card';
@@ -67,13 +70,26 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-4 w-full max-w-[1400px] px-4">
-      {PREVIEW_PLATFORMS.map((platform) => (
-        <div key={platform.name} className="flex flex-col gap-2 w-full h-[375px]">
+      {PREVIEW_PLATFORMS.map((platform, i) => (
+        <motion.div
+          initial={{
+            filter: 'blur(10px)'
+          }}
+          animate={{
+            filter: 'blur(0px)'
+          }}
+          transition={{
+            duration: 0.2,
+            delay: i * 0.05
+          }}
+          key={platform.name}
+          className="flex flex-col gap-2 w-full h-[375px]"
+        >
           <p className="w-full text-center text-lg leading-none">{platform.name}</p>
           <div className="shadow-md bg-transparent rounded-2xl h-full overflow-hidden">
             {renderPreview(platform.component)}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
