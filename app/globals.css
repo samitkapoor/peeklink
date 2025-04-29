@@ -3,7 +3,7 @@
 :root {
   --background: #f8f8f8;
   --foreground: #171717;
-  --primary: #171717;
+  --primary: #f8f8f8;
 }
 
 body {
@@ -14,10 +14,10 @@ body {
 *::-moz-selection {
   /* Code for Firefox */
   color: var(--primary);
-  background: #fff5eb;
+  background: #343434;
 }
 
 *::selection {
   color: var(--primary);
-  background: #fff5eb;
+  background: #343434;
 }
