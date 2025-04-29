@@ -4,6 +4,7 @@ import { Metadata } from '@/types/metadata';
 import TwitterCard from '@/components/ui/twitter-card';
 import LinkedinCard from './ui/linkedin-card';
 import PeerlistCard from './ui/peerlist-card';
+import WhatsappCard from './ui/whatsapp-card';
 
 const PREVIEW_PLATFORMS = [
   { name: 'Twitter', component: 'twitter' },
@@ -14,6 +15,10 @@ const PREVIEW_PLATFORMS = [
   {
     name: 'Peerlist',
     component: 'peerlist'
+  },
+  {
+    name: 'Whatsapp',
+    component: 'whatsapp'
   }
 ];
 
@@ -47,13 +52,21 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
             url={url}
           />
         );
+      case 'whatsapp':
+        return (
+          <WhatsappCard
+            title={openGraph.title || 'Untitled'}
+            description={openGraph.description || ''}
+            url={url}
+          />
+        );
       default:
         return null;
     }
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-4 w-full max-w-[1400px] px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-4 w-full max-w-[1400px] px-4">
       {PREVIEW_PLATFORMS.map((platform) => (
         <div key={platform.name} className="flex flex-col gap-2 w-full h-[375px]">
           <p className="w-full text-center text-lg leading-none">{platform.name}</p>
