@@ -3,12 +3,17 @@ import React from 'react';
 import { Metadata } from '@/types/metadata';
 import TwitterCard from '@/components/ui/twitter-card';
 import LinkedinCard from './ui/linkedin-card';
+import PeerlistCard from './ui/peerlist-card';
 
 const PREVIEW_PLATFORMS = [
   { name: 'Twitter', component: 'twitter' },
   {
     name: 'Linkedin',
     component: 'linkedin'
+  },
+  {
+    name: 'Peerlist',
+    component: 'peerlist'
   }
 ];
 
@@ -33,6 +38,15 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
             url={url}
           />
         );
+      case 'peerlist':
+        return (
+          <PeerlistCard
+            title={openGraph.title || 'Untitled'}
+            description={openGraph.description || ''}
+            image={openGraph.image || ''}
+            url={url}
+          />
+        );
       default:
         return null;
     }
@@ -41,7 +55,7 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-4 w-full max-w-[1400px] px-4">
       {PREVIEW_PLATFORMS.map((platform) => (
-        <div key={platform.name} className="flex flex-col gap-2 w-full max-h-[375px] h-full">
+        <div key={platform.name} className="flex flex-col gap-2 w-full h-[375px]">
           <p className="w-full text-center text-lg leading-none">{platform.name}</p>
           <div className="shadow-md bg-transparent rounded-2xl h-full">
             {renderPreview(platform.component)}
