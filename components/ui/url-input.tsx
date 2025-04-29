@@ -70,7 +70,19 @@ const UrlInput = ({ onSubmit }: { onSubmit: (url: string) => void }) => {
   };
 
   return (
-    <div className="flex flex-col max-w-[500px] w-full gap-1 px-5">
+    <motion.div
+      initial={{
+        filter: 'blur(10px)'
+      }}
+      animate={{
+        filter: 'blur(0px)'
+      }}
+      transition={{
+        duration: 0.2,
+        delay: 0.1
+      }}
+      className="flex flex-col max-w-[500px] w-full gap-1 px-5"
+    >
       <motion.form
         animate={formAnimationControl}
         onSubmit={handleSubmit}
@@ -85,7 +97,7 @@ const UrlInput = ({ onSubmit }: { onSubmit: (url: string) => void }) => {
         <PeekButton type="submit" />
       </motion.form>
       <p className="text-red-500 text-sm ml-6">{error}</p>
-    </div>
+    </motion.div>
   );
 };
 
