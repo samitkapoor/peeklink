@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import { Geist } from 'next/font/google';
 import './globals.css';
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             Samit Kapoor
           </a>
         </p>
+        <Analytics />
       </body>
     </html>
   );
