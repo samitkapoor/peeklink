@@ -19,7 +19,7 @@ const TwitterCard = ({ title, image, url }: TwitterCardProps) => {
             {url.replace('https://', '').replace('http://', '')}
           </p>
           <div>
-            <div className="max-h-[350px] h-full w-full border-[1px] border-white/40 rounded-xl overflow-hidden relative">
+            <div className="max-h-[250px] h-full w-full border-[1px] border-white/40 rounded-xl overflow-hidden relative">
               <Image
                 src="/icons/close.svg"
                 alt="close"

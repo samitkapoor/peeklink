@@ -70,7 +70,7 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
       {PREVIEW_PLATFORMS.map((platform) => (
         <div key={platform.name} className="flex flex-col gap-2 w-full h-[375px]">
           <p className="w-full text-center text-lg leading-none">{platform.name}</p>
-          <div className="shadow-md bg-transparent rounded-2xl h-full">
+          <div className="shadow-md bg-transparent rounded-2xl h-full overflow-hidden">
             {renderPreview(platform.component)}
           </div>
         </div>

@@ -27,7 +27,7 @@ const LinkedinCard = ({ title, image, url }: LinkedinCardProps) => {
           <Image src="/icons/close.svg" alt="linkedin" width={16} height={16} />
         </div>
         {/* banner */}
-        <div className="w-full p-2 border-[1px] border-black/20 flex items-center rounded-lg gap-2">
+        <div className="w-full p-2 border-[1px] border-black/20 flex items-center rounded-lg gap-2 min-h-[70px]">
           <Image
             src={image}
             alt="linkedin"
