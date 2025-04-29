@@ -3,9 +3,21 @@
 :root {
   --background: #f8f8f8;
   --foreground: #171717;
+  --primary: #f96900;
 }
 
 body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+*::-moz-selection {
+  /* Code for Firefox */
+  color: var(--primary);
+  background: #ffffffa3;
+}
+
+*::selection {
+  color: var(--primary);
+  background: #ffffffa3;
 }

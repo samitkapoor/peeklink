@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { motion, useAnimationControls } from 'framer-motion';
 
 const PeekButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
   const [hovering, setHovering] = useState(false);
@@ -30,16 +31,57 @@ const PeekButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ .
 };
 
 const UrlInput = () => {
+  const [url, setUrl] = useState('');
+  const [error, setError] = useState('');
+
+  const formAnimationControl = useAnimationControls();
+
+  const isUrl = (url: string) => {
+    return /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(url);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!url) {
+      formAnimationControl.start({
+        x: [100, -100, 100, -100, 0],
+        transition: {
+          duration: 0.3,
+          ease: 'easeInOut'
+        }
+      });
+      setError('Please enter a URL.');
+    } else if (!isUrl(url)) {
+      formAnimationControl.start({
+        x: [100, -100, 100, -100, 0],
+        transition: {
+          duration: 0.3,
+          ease: 'easeInOut'
+        }
+      });
+      setError('Invalid URL.');
+    } else {
+      setError('');
+    }
+  };
+
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-      className="flex items-center gap-2 justify-center pl-6 max-w-[500px] w-full mt-4 relative border-2 border-black/80 ring-4 ring-transparent focus-within:ring-orange-800/20 focus-within:ring-4 focus-within:border-orange-500 transition-all rounded-2xl"
-    >
-      <input placeholder="Enter URL" className="w-full outline-none border-none" />
-      <PeekButton type="submit" />
-    </form>
+    <div className="flex flex-col max-w-[500px] w-full gap-1">
+      <motion.form
+        animate={formAnimationControl}
+        onSubmit={handleSubmit}
+        className="flex items-center gap-2 justify-center pl-6 w-full mt-4 relative border-2 border-black/80 ring-4 ring-transparent focus-within:ring-orange-800/20 focus-within:ring-4 focus-within:border-orange-500 transition-all rounded-2xl"
+      >
+        <input
+          placeholder="Enter URL"
+          className="w-full outline-none border-none"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <PeekButton type="submit" />
+      </motion.form>
+      <p className="text-red-500 text-sm ml-6">{error}</p>
+    </div>
   );
 };
 
