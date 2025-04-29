@@ -24,7 +24,7 @@ const PeerlistCard = ({ title, description, image, url }: PeerlistCardProps) => 
 
       <div className="w-full flex flex-col items-end justify-end gap-2">
         {/* banner */}
-        <div className="w-full p-2 border-[1px] border-white/20 flex items-center rounded-lg gap-2">
+        <div className="w-full p-2 border-[1px] border-white/20 flex items-center justify-between rounded-lg gap-2">
           <div className="flex flex-col items-start justify-start">
             <p className="text-sm font-medium text-white line-clamp-1">{title}</p>
             <p className="text-xs font-medium text-white/80 line-clamp-2">{description}</p>
