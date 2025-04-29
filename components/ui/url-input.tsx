@@ -21,7 +21,7 @@ const PeekButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ .
             ? '6px 6px 0px 0px rgba(255, 180, 120, 0.6), 3px 3px 0px 0px rgba(255, 120, 50, 0.65)'
             : 'none'
       }}
-      className="bg-orange-500 text-white py-3 pl-5 pr-8 rounded-[14px] flex items-center gap-1 group cursor-pointer hover:-translate-x-[6px] hover:-translate-y-[6px] active:translate-x-0 active:translate-y-0 transition-all duration-300"
+      className="bg-orange-500 text-white py-2 pl-3 pr-7 sm:py-3 sm:pl-5 sm:pr-8 rounded-[14px] flex items-center gap-1 group cursor-pointer hover:-translate-x-[6px] hover:-translate-y-[6px] active:translate-x-0 active:translate-y-0 transition-all duration-300"
     >
       {hovering && !pressed ? (
         <Image src="/icons/eye-open.svg" alt="eyeopen" width={16} height={16} />
@@ -33,7 +33,7 @@ const PeekButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ .
   );
 };
 
-const UrlInput = () => {
+const UrlInput = ({ onSubmit }: { onSubmit: (url: string) => void }) => {
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
 
@@ -65,11 +65,12 @@ const UrlInput = () => {
       setError('Invalid URL.');
     } else {
       setError('');
+      onSubmit(url);
     }
   };
 
   return (
-    <div className="flex flex-col max-w-[500px] w-full gap-1">
+    <div className="flex flex-col max-w-[500px] w-full gap-1 px-5">
       <motion.form
         animate={formAnimationControl}
         onSubmit={handleSubmit}

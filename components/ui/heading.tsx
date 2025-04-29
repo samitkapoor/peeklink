@@ -17,13 +17,7 @@ const LargeHeading = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={cn(
-        'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black',
-        className,
-        moiraiOne.className
-      )}
-    >
+    <div className={cn('text-6xl sm:text-8xl text-black', className, moiraiOne.className)}>
       {children}
     </div>
   );
