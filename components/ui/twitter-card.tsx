@@ -4,12 +4,11 @@ import Avatar from './avatar';
 
 interface TwitterCardProps {
   title: string;
-  description: string;
   image: string;
   url: string;
 }
 
-const TwitterCard = ({ title, description, image, url }: TwitterCardProps) => {
+const TwitterCard = ({ title, image, url }: TwitterCardProps) => {
   return (
     <div className="rounded-2xl bg-black p-5 overflow-hidden w-full flex flex-col items-start justify-start">
       <div className="flex items-start justify-start w-full gap-2">
