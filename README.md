@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔗 LinkPeek
 
-## Getting Started
+**LinkPeek** is a simple web tool that lets you preview how your website or project link will look across multiple social media platforms — before you share it. Whether you're a developer, marketer, or content creator, LinkPeek ensures your shared links make the best first impression.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🔍 **Multi-Platform Previews**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  - Instantly see how your link looks on:
+    - Peerlist
+    - LinkedIn
+    - X (Twitter)
+    - Facebook
+    - WhatsApp
+    <!-- - Reddit (Soon)
+    - Discord (Soon)
+    - Slack (Soon)
+    - Telegram (Soon) -->
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 📸 **Live OG Tag Rendering**  
+  Parses Open Graph and Twitter Card metadata to generate accurate previews.
 
-## Learn More
+<!-- - ⚠️ **Missing Tag Warnings**  (Soon)
+  Get notified if essential tags are missing or incorrectly set. -->
 
-To learn more about Next.js, take a look at the following resources:
+<!-- - 🧪 **Real-Time Editing (coming soon)**
+  Play with your title, description, and image to see changes in real-time. -->
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ How to Contribute
 
-## Deploy on Vercel
+Contributions from the community are welcome! Here's how you can help:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Open an Issue and get assigned**
+2. **Fork the repo**
+3. **Clone your fork**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   git clone https://github.com/your-username/linkpeek.git
+   ```
+
+4. **Create a new branch**
+
+   ```bash
+   git checkout -b feature/my-feature
+   ```
+
+5. **Commit your changes**
+6. **Push and open a PR**
+
+💡 Please make sure to follow the existing code style and add relevant documentation or comments.
+
+---
+
+## ⭐ Like this project?
+
+If you found **LinkPeek** helpful:
+
+- 🌟 Star this repo to show support
+- 🚀 Check out more of my projects at [samitkapoor.com](https://samitkapoor.com)
+- 📬 Suggestions? Feel free to open an [issue](https://github.com/yourusername/linkpeek/issues)
+
+---
+
+Made with ❤️ by [Samit Kapoor](https://samitkapoor.com)
