@@ -1,16 +1,27 @@
 'use client';
 
+import { useState } from 'react';
+import { Metadata } from '@/types/metadata';
+
 import LargeHeading from '@/components/ui/heading';
 import Tagline from '@/components/ui/tagline';
 import UrlInput from '@/components/ui/url-input';
+import LinkPreviews from '@/components/link-previews';
 
 export default function Home() {
-  const handleSubmit = (url: string) => {
-    console.log(url);
+  const [data, setData] = useState<{ success: boolean; metadata: Metadata; error: object }>();
+
+  const handleSubmit = async (url: string) => {
+    const response = await fetch('/api/link-previews', {
+      method: 'POST',
+      body: JSON.stringify({ url })
+    });
+
+    setData(await response.json());
   };
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen w-screen gap-10">
+    <div className="flex flex-col items-center justify-start min-h-screen overflow-y-auto w-screen gap-10 pb-32">
       <div className="flex flex-col items-center justify-center gap-2 relative mt-20 sm:mt-36 md:mt-52">
         <LargeHeading className="text-orange-500">
           <h1>peeklink</h1>
@@ -20,6 +31,12 @@ export default function Home() {
         </Tagline>
       </div>
       <UrlInput onSubmit={handleSubmit} />
+      {data &&
+        (data.success === true ? (
+          <LinkPreviews data={data.metadata} />
+        ) : (
+          <p className="text-red-500">Something went wrong.</p>
+        ))}
     </div>
   );
 }
