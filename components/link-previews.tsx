@@ -8,6 +8,7 @@ import TwitterCard from '@/components/ui/twitter-card';
 import LinkedinCard from './ui/linkedin-card';
 import PeerlistCard from './ui/peerlist-card';
 import WhatsappCard from './ui/whatsapp-card';
+import FacebookCard from './ui/facebook-card';
 
 const PREVIEW_PLATFORMS = [
   { name: 'Twitter', component: 'twitter' },
@@ -22,6 +23,10 @@ const PREVIEW_PLATFORMS = [
   {
     name: 'Whatsapp',
     component: 'whatsapp'
+  },
+  {
+    name: 'Facebook',
+    component: 'facebook'
   }
 ];
 
@@ -63,6 +68,15 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
             url={url}
           />
         );
+      case 'facebook':
+        return (
+          <FacebookCard
+            title={openGraph.title || 'Untitled'}
+            description={openGraph.description || ''}
+            image={openGraph.image || ''}
+            url={url}
+          />
+        );
       default:
         return null;
     }
@@ -83,7 +97,7 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
             delay: i * 0.05
           }}
           key={platform.name}
-          className="flex flex-col gap-2 w-full h-[375px]"
+          className="flex flex-col gap-2 w-full min-h-[375px]"
         >
           <p className="w-full text-center text-lg leading-none">{platform.name}</p>
           <div className="shadow-md bg-transparent rounded-2xl h-full overflow-hidden">
