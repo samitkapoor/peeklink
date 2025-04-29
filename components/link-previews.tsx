@@ -26,10 +26,10 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-4 max-w-7xl w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-4 max-w-7xl w-full px-4">
       {PREVIEW_PLATFORMS.map((platform) => (
         <div key={platform.name} className="flex flex-col gap-2 w-full">
-          <Tagline>{platform.name}</Tagline>
+          <p className="w-full text-center text-lg leading-none">{platform.name}</p>
           {renderPreview(platform.component)}
         </div>
       ))}
