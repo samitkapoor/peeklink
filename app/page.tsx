@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen overflow-y-auto w-screen gap-10 pb-32">
+    <div className="flex flex-col items-center justify-start overflow-y-auto w-screen gap-10 pb-32">
       <div className="flex flex-col items-center justify-center gap-2 relative mt-20 sm:mt-36 md:mt-52">
         <LargeHeading className="text-orange-500">
           <h1>peeklink</h1>

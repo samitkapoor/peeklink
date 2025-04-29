@@ -34,7 +34,7 @@ const PeekButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ .
 };
 
 const UrlInput = ({ onSubmit }: { onSubmit: (url: string) => void }) => {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState('readmechef.com');
   const [error, setError] = useState('');
 
   const formAnimationControl = useAnimationControls();

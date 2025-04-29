@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dicebear/collection": "^9.2.2",
+    "@dicebear/converter": "^9.2.2",
+    "@dicebear/core": "^9.2.2",
     "cheerio": "^1.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.9.2",
