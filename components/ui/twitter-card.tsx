@@ -34,7 +34,7 @@ const TwitterCard = ({ title, image, url }: TwitterCardProps) => {
                 height={250}
                 width={250}
               />
-              <p className="absolute bottom-2 left-2 text-white line-clamp-1 bg-black text-xs">
+              <p className="absolute bottom-2 left-2 text-white line-clamp-1 px-1.5 rounded-sm bg-black text-xs">
                 {title}
               </p>
             </div>
