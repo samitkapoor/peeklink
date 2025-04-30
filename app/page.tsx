@@ -9,6 +9,7 @@ import UrlInput from '@/components/ui/url-input';
 import LinkPreviews from '@/components/link-previews';
 import { motion } from 'framer-motion';
 import Article from '@/components/article';
+import TopButtons from '@/components/ui/top-buttons';
 
 export default function Home() {
   const [data, setData] = useState<{ success: boolean; metadata: Metadata; error: object }>();
@@ -27,7 +28,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start overflow-y-auto w-screen gap-10 pb-32 min-h-screen bg-gradient-to-b from-transparent via-orange-100/70 to-transparent">
+    <div className="flex flex-col items-center justify-start overflow-y-auto w-screen gap-10 pb-32 min-h-screen bg-gradient-to-b from-transparent via-orange-100/70 to-transparent relative">
+      <TopButtons />
       <motion.div
         initial={{
           filter: 'blur(10px)'
