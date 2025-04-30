@@ -8,6 +8,7 @@ import Tagline from '@/components/ui/tagline';
 import UrlInput from '@/components/ui/url-input';
 import LinkPreviews from '@/components/link-previews';
 import { motion } from 'framer-motion';
+import Article from '@/components/article';
 
 export default function Home() {
   const [data, setData] = useState<{ success: boolean; metadata: Metadata; error: object }>();
@@ -56,6 +57,7 @@ export default function Home() {
         ) : (
           <p className="text-red-500">Something went wrong.</p>
         ))}
+      <Article />
     </div>
   );
 }
