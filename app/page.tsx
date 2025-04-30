@@ -57,8 +57,8 @@ export default function Home() {
       {data &&
         (data.success === true ? (
           <>
-            <LinkReport data={data.metadata} />
             <LinkPreviews data={data.metadata} />
+            <LinkReport data={data.metadata} />
           </>
         ) : (
           <p className="text-red-500">Something went wrong.</p>
