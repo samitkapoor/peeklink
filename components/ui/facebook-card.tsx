@@ -36,7 +36,7 @@ const FacebookCard = ({ title, image, url, description }: FacebookCardProps) => 
             height={512}
             className="w-full object-cover"
           />
-          <div className="flex flex-col items-start justify-start px-2 py-2 bg-[#D6D8E0]">
+          <div className="flex flex-col items-start justify-start px-2 py-2 bg-[#D6D8E0] w-full">
             <p className="text-xs text-black/50">
               {url.replace('https://', '').replace('http://', '')}
             </p>
