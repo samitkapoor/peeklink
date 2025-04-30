@@ -10,6 +10,7 @@ import LinkPreviews from '@/components/link-previews';
 import { motion } from 'framer-motion';
 import Article from '@/components/article';
 import TopButtons from '@/components/ui/top-buttons';
+import LinkReport from '@/components/link-report';
 
 export default function Home() {
   const [data, setData] = useState<{ success: boolean; metadata: Metadata; error: object }>();
@@ -28,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start overflow-y-auto w-screen gap-10 pb-32 min-h-screen bg-gradient-to-b from-transparent via-orange-100/70 to-transparent relative">
+    <div className="flex flex-col items-center justify-start overflow-y-auto w-screen gap-10 pb-32 min-h-screen  relative">
       <TopButtons />
       <motion.div
         initial={{
@@ -55,7 +56,10 @@ export default function Home() {
       )}
       {data &&
         (data.success === true ? (
-          <LinkPreviews data={data.metadata} />
+          <>
+            <LinkReport data={data.metadata} />
+            <LinkPreviews data={data.metadata} />
+          </>
         ) : (
           <p className="text-red-500">Something went wrong.</p>
         ))}
