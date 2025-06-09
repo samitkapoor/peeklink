@@ -1,6 +1,6 @@
-# 🔗 LinkPeek
+# 🔗 peeklink
 
-**LinkPeek** is a simple web tool that lets you preview how your website or project link will look across multiple social media platforms — before you share it. Whether you're a developer, marketer, or content creator, LinkPeek ensures your shared links make the best first impression.
+**Peeklink** is a simple web tool that lets you preview how your website or project link will look across multiple social media platforms — before you share it. Whether you're a developer, marketer, or content creator, peeklink ensures your shared links make the best first impression.
 
 ---
 
@@ -39,7 +39,7 @@ Contributions from the community are welcome! Here's how you can help:
 3. **Clone your fork**
 
    ```bash
-   git clone https://github.com/your-username/linkpeek.git
+   git clone https://github.com/your-username/peeklink.git
    ```
 
 4. **Create a new branch**
@@ -57,11 +57,11 @@ Contributions from the community are welcome! Here's how you can help:
 
 ## ⭐ Like this project?
 
-If you found **LinkPeek** helpful:
+If you found **peeklink** helpful:
 
 - 🌟 Star this repo to show support
 - 🚀 Check out more of my projects at [samitkapoor.com](https://samitkapoor.com)
-- 📬 Suggestions? Feel free to open an [issue](https://github.com/yourusername/linkpeek/issues)
+- 📬 Suggestions? Feel free to open an [issue](https://github.com/yourusername/peeklink/issues)
 
 ---
 
