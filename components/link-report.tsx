@@ -139,7 +139,7 @@ const LinkReport = ({ data }: { data: Metadata }) => {
   );
 
   return (
-    <div className="max-w-[1400px] w-full px-4">
+    <div className="max-w-[1400px] w-full px-4 mt-10">
       <div className="border-2 rounded-lg overflow-hidden w-full flex flex-col">
         <button
           className={`w-full p-4 flex items-center justify-between bg-white border-b-2 border-gray-800 transition-colors duration-200 outline-none`}
