@@ -6,10 +6,9 @@ interface SubstackCardProps {
   title: string;
   image: string;
   url: string;
-  description: string;
 }
 
-const SubstackCard = ({ title, image, url, description }: SubstackCardProps) => {
+const SubstackCard = ({ title, image, url }: SubstackCardProps) => {
   return (
     <div className="flex flex-col items-start justify-between p-5 bg-[#161718] rounded-2xl w-full h-full">
       {/* Header */}

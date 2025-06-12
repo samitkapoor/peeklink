@@ -86,7 +86,6 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
         return (
           <SubstackCard
             title={openGraph.title || 'Untitled'}
-            description={openGraph.description || ''}
             image={openGraph.image || ''}
             url={url}
           />
