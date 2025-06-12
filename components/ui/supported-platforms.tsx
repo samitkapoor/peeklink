@@ -28,6 +28,11 @@ const SUPPORTED_PLATFORMS = [
     name: 'Peerlist',
     icon: null,
     shortName: 'PL'
+  },
+  {
+    name: 'Substack',
+    icon: null,
+    shortName: 'ST'
   }
 ];
 
@@ -73,7 +78,7 @@ const SupportedPlatforms = () => {
                 <platform.icon className="w-4 h-4 text-gray-600 group-hover:text-orange-500 transition-colors duration-200" />
               ) : (
                 <span className="text-xs font-semibold text-gray-600 group-hover:text-orange-500 transition-colors duration-200">
-                  P
+                  {platform.name.charAt(0)}
                 </span>
               )}
             </div>

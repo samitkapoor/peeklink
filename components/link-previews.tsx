@@ -9,6 +9,7 @@ import LinkedinCard from './ui/linkedin-card';
 import PeerlistCard from './ui/peerlist-card';
 import WhatsappCard from './ui/whatsapp-card';
 import FacebookCard from './ui/facebook-card';
+import SubstackCard from './ui/substack-card';
 
 const PREVIEW_PLATFORMS = [
   { name: 'Twitter', component: 'twitter' },
@@ -27,6 +28,10 @@ const PREVIEW_PLATFORMS = [
   {
     name: 'Facebook',
     component: 'facebook'
+  },
+  {
+    name: 'Substack',
+    component: 'substack'
   }
 ];
 
@@ -71,6 +76,15 @@ const LinkPreviews = ({ data }: { data: Metadata }) => {
       case 'facebook':
         return (
           <FacebookCard
+            title={openGraph.title || 'Untitled'}
+            description={openGraph.description || ''}
+            image={openGraph.image || ''}
+            url={url}
+          />
+        );
+      case 'substack':
+        return (
+          <SubstackCard
             title={openGraph.title || 'Untitled'}
             description={openGraph.description || ''}
             image={openGraph.image || ''}

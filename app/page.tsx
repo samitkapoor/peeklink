@@ -54,7 +54,7 @@ export default function Home() {
       <UrlInput onSubmit={handleSubmit} />
       <SupportedPlatforms />
       {isLoading && (
-        <div className="animate-spin h-8 w-8 border-t-3 border-l-3 blur-[1px] rounded-full border-orange-500"></div>
+        <div className="animate-spin h-8 mt-10 w-8 border-t-3 border-l-3 blur-[1px] rounded-full border-orange-500"></div>
       )}
       {data &&
         (data.success === true ? (
